@@ -6,6 +6,7 @@
   become:         true
   with_items:
     - apt-transport-https
+    - cron
 
 - name:           debian | Adding Elasticsearch Curator Repo Key
   apt_key:
