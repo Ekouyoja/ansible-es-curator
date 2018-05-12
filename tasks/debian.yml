@@ -1,4 +1,12 @@
 ---
+- name:           debian | Installing Pre-Reqs
+  apt:
+    name:         "{{ item }}"
+    state:        present
+  become:         true
+  with_items:
+    - apt-transport-https
+
 - name:           debian | Adding Elasticsearch Curator Repo Key
   apt_key:
     url:          "{{ es_curator_repo_key }}"
